@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WorldGrid
 {
+    //gridsystem by CodeMonkey
+
     private int width;
     private int length;
 
