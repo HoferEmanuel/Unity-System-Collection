@@ -4,5 +4,13 @@ using UnityEngine;
 
 public class UIWindow : MonoBehaviour
 {
+    public int id;
+    public GameObject menuWindow;
+
+    public void Awake()
+    {
+        
+    }
+
 
 }
