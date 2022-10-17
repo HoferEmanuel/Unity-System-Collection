@@ -30,4 +30,6 @@ public class UIWindowManager : MonoBehaviour
         uiWindows.Add(targetWindow);
         targetWindow.id = uiWindows.Count - 1;
     }
+
+    public void RemoveUIWindow(uiWindows targetWindow) => uiWindows.Remove(targetWindow);
 }
