@@ -1,5 +1,5 @@
 # Unity-System-Collection
-## including a variaty of helpful systems for all kinds of games, for you to turn your concept into a strong foudation in no time.
+## including a variaty of helpful systems for all kinds of games, for you to turn your concept into a strong foundation in no time.
 
 ## Content
 <details>
