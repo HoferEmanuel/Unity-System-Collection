@@ -26,3 +26,5 @@
 <summary> [ CustomizationSystems ] </summary>
 - WeaponCustomization
 </details>
+
+### Utils provides basic functions which most of the scripts will need.
