@@ -21,7 +21,6 @@ public class UIWindow : MonoBehaviour
     {
         if (id == targetID)
             OpenWindow();
-
     }
 
     public void OpenWindow() => menuWindow.SetActive(true);
