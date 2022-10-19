@@ -15,7 +15,8 @@ public class InputManager : MonoBehaviour
 
     public static InputManager current;
 
-    
+    //a test script which will invoke all assigned events also contains functions like movementHandling for the InputSystem.
+    public InputManagerTest player;
 
     //PlayerControls is representing the Action Input Script which was created in the Unity-Editor.
     //Either generate a script with the name "PlayerControls" or change the variable name to your generated script. 
@@ -28,24 +29,26 @@ public class InputManager : MonoBehaviour
     {
         current = this;
 
-        //assiging Controls + ActionMaps
+        //assiging Controls + ActionMaps.
         controls = new PlayerControls();
 
         movement = controls.PlayerMovement;
         uiControl = controls.UIControls;
 
+        //event subscriptions.
         AssignPlayerControl();
         AssignUIControl();
     }
 
     private void AssignPlayerControl()
     {
-
+        movement.PlayerJump = context += InputManagerTest.PlayerJump();
     }
 
     private void AssignUIControl()
     {
-        uiControl.PauseGame.performed = context += 
+        uiControl.PauseGame.performed = context += InputManagerTest.PauseGame();
+        uiControl.ToggleInventory.performed = context += InputManagerTest.ToggleInventory();
     }
 
     private void OnEnable()
