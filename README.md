@@ -16,6 +16,7 @@
 <details>
 <summary> [ Player ] </summary>
 - FPS-Player-Movement
+- Invnentory
 </details>
 
 ---
