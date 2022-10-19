@@ -17,6 +17,7 @@
 <summary> [ Player ] </summary>
 - FPS-Player-Movement
 - Invnentory
+- InputManager for Unity Input System
 </details>
 
 ---
