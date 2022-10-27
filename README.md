@@ -10,7 +10,7 @@
 <details>
 <summary> [ UI ] </summary>
 - UIWindowManager
-- UIElements (customizable UI-Elements providing basic UI-functions and room for modification)
+- DraggableUIElement
 </details>
 
 <details>
@@ -18,6 +18,11 @@
 - FPS-Player-Movement
 - Invnentory
 - InputManager for Unity Input System
+</details>
+
+<details>
+<summary> [ Audio ] </summary>
+- AudioManager (with sounds on point)
 </details>
 
 ---
