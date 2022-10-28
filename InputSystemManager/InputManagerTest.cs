@@ -19,6 +19,11 @@ public class InputManagerTest : MonoBehaviour
 
     private void PlayerMove()
     {
-        
+        //read movementInput
+        float horizontalInput = InputManager.current.movement.MoveHorizontal.ReadValue<float>();
+        float verticlaInput = InputManager.current.movement.MoveVertical.ReadValue<float>();
+
+        if (horizontalInput > 0 || verticlaInput > 0)
+            Debug.Log("PlayerMoving");
     }
 }

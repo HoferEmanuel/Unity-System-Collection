@@ -25,6 +25,12 @@
 - AudioManager (with sounds on point)
 </details>
 
+<details>
+<summary> [ GameObject & Transform manipulations] </summary>
+- gain size over time
+- follow transform
+</details>
+
 ---
 
 ## More specific Systems
