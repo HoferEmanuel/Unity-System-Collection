@@ -11,6 +11,11 @@ public class GraphicsSettingsMenu : MonoBehaviour
 
     private void Awake()
     {
+        GetAllResolutions();
+    }  
+
+    void GetAllResolutions()
+    {
         possibleResolutions = Screen.resolutions;
 
         for (int i = 0; i < possibleResolutions.Length; i++)
@@ -20,11 +25,16 @@ public class GraphicsSettingsMenu : MonoBehaviour
             if (!resList.Contains(targetRes))
                 resList.Add(targetRes);
         }
-    }  
+    }
+
+    public void FirstTimeSetup()
+    {
+        SettingsManager.ChangeFrameRate();
+    }
 
     public void ResetSettings()
     {
-        
+
     } 
 
     public void SaveChanges()

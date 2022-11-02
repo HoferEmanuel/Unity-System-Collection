@@ -12,22 +12,24 @@ public static class SettingsManager
 
     public static void CheckForChanges()
     {
-
+        CheckGraphics();
     }
 
     public static void CheckGraphics()
     {
-
+        
     }
 
     public void SetRefreshRate(float targetValue)
     {
-
+        Resolution.refreshRate = targetValue;
+        PlayerPrefs.SetFloat("refreshRate", targetValue);
     }
 
-    public void ChangeVsync()
+    public void ChangeVsync(int targetAmount)
     {
-
+        QualitySettings.vsynchCount = targetAmount;
+        PlayerPrefs.SetInt("vsynch", targetAmount);
     }
 
     public void ChangeResolution(Vector2 targetRes)
