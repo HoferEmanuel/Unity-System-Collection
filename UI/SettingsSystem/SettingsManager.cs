@@ -20,7 +20,14 @@ public static class SettingsManager
         
     }
 
-    public void SetRefreshRate(float targetValue)
+    public void ResetGraphicsSettings()
+    {
+        ChangeRefreshrate(defaultRefreshrate);
+        ChangeVsync(defaultVsync);
+        ChangeFrameRate(defaultRefreshrate); 
+    }
+
+    public void ChangeRefreshrate(float targetValue)
     {
         Resolution.refreshRate = targetValue;
         PlayerPrefs.SetFloat("refreshRate", targetValue);
@@ -32,10 +39,8 @@ public static class SettingsManager
         PlayerPrefs.SetInt("vsynch", targetAmount);
     }
 
-    public void ChangeResolution(Vector2 targetRes)
+    public void ChangeResolution(string targetRes)
     {
-        string targetRes = targetRes.x.ToString() + " x " + targetRes.y.ToString();
-        Screen.SetResolution()
         PlayerPrefs.SetString("resolution", targetRes, FullScreenMode.ExclusiveFullScreen);
     }
 

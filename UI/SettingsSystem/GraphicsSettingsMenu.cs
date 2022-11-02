@@ -27,15 +27,7 @@ public class GraphicsSettingsMenu : MonoBehaviour
         }
     }
 
-    public void FirstTimeSetup()
-    {
-        SettingsManager.ChangeFrameRate();
-    }
-
-    public void ResetSettings()
-    {
-
-    } 
+    public void ResetSettings() => SettingsManager.ResetGraphicsSettings();
 
     public void SaveChanges()
     {
