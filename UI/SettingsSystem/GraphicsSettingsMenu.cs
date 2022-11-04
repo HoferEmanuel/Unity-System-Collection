@@ -6,11 +6,25 @@ using TMPro;
 
 public class GraphicsSettingsMenu : MonoBehaviour
 {
+    public static GraphicsSettingsMenu current; 
+
     Resolution[] possibleResolutions;
     List<string> resList;
 
+    [Header("Graphics")]
+    public TMP_Dropdown resolutionDropdown, screenModeDropdown;
+    public TMP_Dropdown frameRateInput, vSyncInput;
+    public TMP_InputField frameRateInput;
+
+    [Header("Controls")]
+    public Slider mouseSensX, mouseSensY;
+    public Toggle holdToAim, holdToCrouch,
+
+
     private void Awake()
     {
+        current = this;
+
         GetAllResolutions();
     }  
 
@@ -25,6 +39,28 @@ public class GraphicsSettingsMenu : MonoBehaviour
             if (!resList.Contains(targetRes))
                 resList.Add(targetRes);
         }
+    }
+
+    public Resolution GetRes(string targetRes)
+    {
+        foreach(var res in resList)
+        {
+            if (targetRes == res.width.ToString() + " x " + res.height.ToString())
+                return res;
+        }
+
+        return null;
+    }
+
+    public int GetDropdownOptionByName(TMP_Dropdown targetSlider, string targetText)
+    {
+        for(int i = 0; i < targetSlider.options.Length; i++)
+        {
+            if(targetSlider.options[targetSlider.value].text == targetText)
+                return i;
+        }
+
+        return 0;
     }
 
     public void ResetSettings() => SettingsManager.ResetGraphicsSettings();

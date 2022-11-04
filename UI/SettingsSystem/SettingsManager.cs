@@ -10,6 +10,9 @@ public static class SettingsManager
     public static float defaultRefreshrate = 60;
     public static int defaultVsync = 0;
 
+    [Header("Components")]
+    public GraphicsSettingsMenu menu = GraphicsSettingsMenu.current;
+
     public static void CheckForChanges()
     {
         CheckGraphics();
@@ -41,12 +44,13 @@ public static class SettingsManager
 
     public void ChangeResolution(string targetRes)
     {
+        Screen.SetResolution();
         PlayerPrefs.SetString("resolution", targetRes, FullScreenMode.ExclusiveFullScreen);
     }
 
     public void ChangeFrameRate(float targetValue)
     {
         Application.targetFrameRate = 300;
-        PlayerPrefs.SetFloat("frameRate", targetvalue);
+        PlayerPrefs.SetFloat("frameRate", targetValue);
     } 
 }
