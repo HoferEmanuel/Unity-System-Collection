@@ -1,15 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public static class SettingsManager
 {
-    [Header("Graphics")]
-    public static string defaultResolution;
-    public static float defaultFramerate = 60;
-    public static float defaultRefreshrate = 60;
-    public static int defaultVsync = 0;
-
     [Header("Components")]
     public GraphicsSettingsMenu menu = GraphicsSettingsMenu.current;
 
@@ -25,7 +20,7 @@ public static class SettingsManager
 
     public void ResetGraphicsSettings()
     {
-        ChangeRefreshrate(defaultRefreshrate);
+        ChangeRefreshrate(GraphicsSettingsMenu.current.defaultSettings.);
         ChangeVsync(defaultVsync);
         ChangeFrameRate(defaultRefreshrate); 
     }
@@ -39,7 +34,7 @@ public static class SettingsManager
     public void ChangeVsync(int targetAmount)
     {
         QualitySettings.vsynchCount = targetAmount;
-        PlayerPrefs.SetInt("vsynch", targetAmount);
+        PlayerPrefs.SetInt("vSynch", targetAmount);
     }
 
     public void ChangeResolution(string targetRes)

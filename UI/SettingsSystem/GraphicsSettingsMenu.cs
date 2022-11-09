@@ -8,6 +8,8 @@ public class GraphicsSettingsMenu : MonoBehaviour
 {
     public static GraphicsSettingsMenu current; 
 
+    public GraphicSettings defaultSettings, currentSettings;
+
     Resolution[] possibleResolutions;
     List<string> resList;
 
@@ -27,6 +29,7 @@ public class GraphicsSettingsMenu : MonoBehaviour
 
         GetAllResolutions();
     }  
+
 
     void GetAllResolutions()
     {
@@ -69,4 +72,15 @@ public class GraphicsSettingsMenu : MonoBehaviour
     {
 
     }
+}
+
+[System.Serializable]
+public class GraphicSettings
+{
+    public string resolution;
+    public string screenMode;
+    public int framerate;
+    public int refreshRate;
+    public int vSyncCount;
+    public int monitorIndex;
 }
