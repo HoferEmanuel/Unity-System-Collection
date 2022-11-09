@@ -6,11 +6,16 @@ using UnityEngine;
 public static class SettingsManager
 {
     [Header("Components")]
-    public GraphicsSettingsMenu menu = GraphicsSettingsMenu.current;
+    public GraphicsSettingsMenu graphics = GraphicsSettingsMenu.current;
 
     public static void CheckForChanges()
     {
-        CheckGraphics();
+        GraphicSettings gs = graphics.currentSettings;
+
+        if(gs.resolution != graphics.resolutionDropdown.options[graphics.resolutionDropdown.value].text)
+            ChangeResolution(graphics.resolutionDropdown.options[graphics.options[graphics.resolutionDropdown.value].text]);
+
+        if(graphics.currentSettings.)
     }
 
     public static void CheckGraphics()
@@ -20,9 +25,10 @@ public static class SettingsManager
 
     public void ResetGraphicsSettings()
     {
-        ChangeRefreshrate(GraphicsSettingsMenu.current.defaultSettings.);
-        ChangeVsync(defaultVsync);
-        ChangeFrameRate(defaultRefreshrate); 
+        ChangeRefreshrate(graphics.defaultSettings.refreshRate);
+        ChangeVsync(graphics.defaultSettings.vSyncCount);
+        ChangeFrameRate(graphics.defaultSettings.frameRate); 
+        ChangeResolution(graphics.defaultSettings.resolution);
     }
 
     public void ChangeRefreshrate(float targetValue)
@@ -39,7 +45,8 @@ public static class SettingsManager
 
     public void ChangeResolution(string targetRes)
     {
-        Screen.SetResolution();
+        Resolution res = graphics.GetRes(targetRes);
+        Screen.SetResolution(res.width, res.height, Screen.FullScreenMode);
         PlayerPrefs.SetString("resolution", targetRes, FullScreenMode.ExclusiveFullScreen);
     }
 

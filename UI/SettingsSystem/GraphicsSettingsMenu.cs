@@ -55,11 +55,11 @@ public class GraphicsSettingsMenu : MonoBehaviour
         return null;
     }
 
-    public int GetDropdownOptionByName(TMP_Dropdown targetSlider, string targetText)
+    public int GetDropdownOptionByName(TMP_Dropdown targetDropdown, string targetText)
     {
-        for(int i = 0; i < targetSlider.options.Length; i++)
+        for(int i = 0; i < targetDropdown.options.Length; i++)
         {
-            if(targetSlider.options[targetSlider.value].text == targetText)
+            if(targetDropdown.options[targetDropdown.value].text == targetText)
                 return i;
         }
 
@@ -79,7 +79,7 @@ public class GraphicSettings
 {
     public string resolution;
     public string screenMode;
-    public int framerate;
+    public int frameRate;
     public int refreshRate;
     public int vSyncCount;
     public int monitorIndex;
